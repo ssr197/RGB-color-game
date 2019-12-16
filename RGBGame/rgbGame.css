@@ -22,3 +22,13 @@ span{
   float: left;
   margin: 1.66%
 }
+
+.dashBoard{
+  background: white;
+  height: 25px;
+  text-align: center;
+  color: black;
+}
+
+.button{
+}

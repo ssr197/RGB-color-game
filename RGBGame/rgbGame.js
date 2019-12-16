@@ -1,14 +1,12 @@
 var listOfColors = generateRandomColors(6);
 
 var squares = document.querySelectorAll(".square");
-
 var h1 = document.querySelector("h1");
-var coloePicked = listOfColors[pickColor()];
+var colorPicked = listOfColors[pickColor()];
 var colorQuestion = document.getElementById("colorQuestion");
-colorQuestion.textContent = coloePicked;
-
 var message = document.getElementById("isCorrect");
 
+colorQuestion.textContent = colorPicked;
 
 for (var i = 0; i < squares.length; i++){
   squares[i].style.backgroundColor = listOfColors[i];
@@ -16,7 +14,7 @@ for (var i = 0; i < squares.length; i++){
   squares[i].addEventListener('click', function(){
     var clickedColor = this.style.backgroundColor;
 
-    if(clickedColor === coloePicked){
+    if(clickedColor === colorPicked){
       message.textContent = "Congrats, You have done it"
       changeColor(clickedColor);
       h1.style.backgroundColor = clickedColor;
@@ -53,4 +51,11 @@ function getrandomRGB(){
   var g = Math.floor(Math.random() * 256);
   var b = Math.floor(Math.random() * 256);
   return "rgb("+r+", "+g+", "+b+")"
+}
+
+function changeColor(){
+  listOfColors = generateRandomColors(6);
+  coloePickrd = listOfColors[pickColor()];
+
+
 }
