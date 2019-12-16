@@ -12,6 +12,8 @@ var coloePicked = listOfColors[2];
 var colorQuestion = document.getElementById("colorQuestion");
 colorQuestion.textContent = coloePicked;
 
+var message = document.getElementById("isCorrect");
+
 
 for (var i = 0; i < squares.length; i++){
   squares[i].style.backgroundColor = listOfColors[i];
@@ -20,10 +22,11 @@ for (var i = 0; i < squares.length; i++){
     var clickedColor = this.style.backgroundColor;
 
     if(clickedColor === coloePicked){
-      alert("True");
+      message.textContent = "Congrats, You have done it"
     }
     else{
-      alert("false");
+      this.style.backgroundColor = "#232323";
+      message.textContent = "Oops! Try Again"
     }
   })
 }
