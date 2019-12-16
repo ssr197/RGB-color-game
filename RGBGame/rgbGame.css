@@ -32,3 +32,8 @@ span{
 
 .button{
 }
+
+.GameName{
+  background: rgb(126, 126, 126);
+  height: 50px;
+}

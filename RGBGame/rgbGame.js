@@ -17,7 +17,7 @@ for (var i = 0; i < squares.length; i++){
       message.textContent = "Congrats, You have done it"
       changeColor(clickedColor);
       h1.style.backgroundColor = clickedColor;
-      button.textContent = "Play Again ?"
+      button.textContent = "Play Again"
     }
     else{
       this.style.backgroundColor = "#232323";
