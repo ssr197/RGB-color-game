@@ -5,19 +5,19 @@ var h1 = document.querySelector("h1");
 var colorPicked = listOfColors[pickColor()];
 var colorQuestion = document.getElementById("colorQuestion");
 var message = document.getElementById("isCorrect");
+var button = document.getElementById("reset");
 
 colorQuestion.textContent = colorPicked;
 
 for (var i = 0; i < squares.length; i++){
   squares[i].style.backgroundColor = listOfColors[i];
-
   squares[i].addEventListener('click', function(){
     var clickedColor = this.style.backgroundColor;
-
     if(clickedColor === colorPicked){
       message.textContent = "Congrats, You have done it"
       changeColor(clickedColor);
       h1.style.backgroundColor = clickedColor;
+      button.textContent = "Play Again ?"
     }
     else{
       this.style.backgroundColor = "#232323";
@@ -53,9 +53,10 @@ function getrandomRGB(){
   return "rgb("+r+", "+g+", "+b+")"
 }
 
-function changeColor(){
+function SetNewColors(){
   listOfColors = generateRandomColors(6);
   coloePickrd = listOfColors[pickColor()];
-
-
+  for(var i = 0; i < listOfColors.length; i++){
+    squares[i].style.backgroundColor = listOfColors[i];
+  }
 }
